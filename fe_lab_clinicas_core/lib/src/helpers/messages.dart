@@ -60,10 +60,10 @@ mixin MessageViewMixin<T extends StatefulWidget> on State<T> {
           Messages.showError(errorMessage, context);
           break;
         case MessageStateMixin(:final infoMessage?):
-          Messages.showError(infoMessage, context);
+          Messages.showInfo(infoMessage, context);
           break;
         case MessageStateMixin(:final successMessage?):
-          Messages.showError(successMessage, context);
+          Messages.showSuccess(successMessage, context);
           break;
       }
     });

@@ -19,6 +19,7 @@ final class LabClinicasTheme {
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
       fillColor: lightOrangeColor,
+      alignLabelWithHint: true,
       labelStyle: const TextStyle(
         fontSize: 14,
         color: orangeColor,

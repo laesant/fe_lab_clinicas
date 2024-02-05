@@ -13,3 +13,4 @@ export 'src/exceptions/service_exception.dart';
 export 'src/theme/lab_clinicas_theme.dart';
 export 'src/widgets/lab_clinicas_app_bar.dart';
 export 'src/widgets/icon_popup_menu_widget.dart';
+export 'src/widgets/input_label.dart';
