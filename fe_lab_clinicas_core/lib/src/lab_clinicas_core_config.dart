@@ -6,19 +6,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_getit/flutter_getit.dart';
 
 class LabClinicasCoreConfig extends StatelessWidget {
-  const LabClinicasCoreConfig(
-      {super.key,
-      this.binding,
-      this.pages,
-      this.pagesBuilders,
-      this.modules,
-      required this.title});
+  const LabClinicasCoreConfig({
+    super.key,
+    this.binding,
+    this.pages,
+    this.pagesBuilders,
+    this.modules,
+    required this.title,
+    this.didStart,
+  });
 
   final ApplicationBindings? binding;
   final List<FlutterGetItPageRouter>? pages;
   final List<FlutterGetItPageBuilder>? pagesBuilders;
   final List<FlutterGetItModule>? modules;
   final String title;
+  final VoidCallback? didStart;
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +34,9 @@ class LabClinicasCoreConfig extends StatelessWidget {
         return AsyncStateBuilder(
           loader: LabClinicasLoader(),
           builder: (navigatorObserver) {
+            if (didStart != null) {
+              didStart!();
+            }
             return MaterialApp(
               title: title,
               routes: routes,
