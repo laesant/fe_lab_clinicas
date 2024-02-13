@@ -105,7 +105,7 @@ class _DocumentsPageState extends State<DocumentsPage> with MessageViewMixin {
                   ),
                   Visibility(
                     visible:
-                        totalMedicalOrder > 0 && totalHealthInsuranceCard < 0,
+                        totalMedicalOrder > 0 && totalHealthInsuranceCard > 0,
                     child: Column(
                       children: [
                         const SizedBox(height: 24),
@@ -119,6 +119,7 @@ class _DocumentsPageState extends State<DocumentsPage> with MessageViewMixin {
                                       fixedSize: const Size.fromHeight(48)),
                                   onPressed: () {
                                     selfServiceController.clearDocuments();
+                                    setState(() {});
                                   },
                                   child: const Text('REMOVER TODAS')),
                             ),
@@ -129,7 +130,10 @@ class _DocumentsPageState extends State<DocumentsPage> with MessageViewMixin {
                                         backgroundColor:
                                             LabClinicasTheme.orangeColor,
                                         fixedSize: const Size.fromHeight(48)),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.of(context)
+                                          .pushNamed('/self-service/done');
+                                    },
                                     child: const Text('FINALIZAR')))
                           ],
                         ),
