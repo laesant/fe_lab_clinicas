@@ -13,7 +13,15 @@
             "password": "123123"
         }
     ],
-    "attendantDeskAssignment": [],
+    "attendantDeskAssignment": [
+        {
+            "id": "1f380ed0-5fe0-1eb8-9b7e-493b9b9a82c2",
+            "user_id": "ce3101c0-1aaa-1e8a-8aa1-cb4b7f020e45",
+            "desk_number": 10,
+            "date_created": "2024-02-14T17:05:26.457252",
+            "status": "Available"
+        }
+    ],
     "patients": [
         {
             "id": "b76a78f0-139f-1e91-b8df-f53591feba1b",
