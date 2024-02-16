@@ -7,8 +7,7 @@ part 'patient_information_form_model.g.dart';
 enum PatientInformationFormStatus {
   waiting('Waiting'),
   checkIn('Checked In'),
-  beingAttended('Being Attended'),
-  ;
+  beingAttended('Being Attended');
 
   final String id;
   const PatientInformationFormStatus(this.id);

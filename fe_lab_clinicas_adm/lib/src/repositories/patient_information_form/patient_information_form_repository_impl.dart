@@ -43,7 +43,7 @@ class PatientInformationFormRepositoryImpl
       String id, PatientInformationFormStatus status) async {
     try {
       await restClient.auth
-          .put('/patientInformationForm/$id', data: {'status': status});
+          .put('/patientInformationForm/$id', data: {'status': status.id});
       return Right(unit);
     } on DioException catch (e, s) {
       log('Erro ao atualizar status do form', error: e, stackTrace: s);
