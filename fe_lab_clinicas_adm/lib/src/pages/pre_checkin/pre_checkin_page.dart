@@ -1,14 +1,30 @@
+import 'package:fe_lab_clinicas_adm/src/models/patient_information_form_model.dart';
+import 'package:fe_lab_clinicas_adm/src/pages/pre_checkin/pre_checkin_controller.dart';
 import 'package:fe_lab_clinicas_adm/src/shared/data_item.dart';
 import 'package:fe_lab_clinicas_core/fe_lab_clinicas_core.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_getit/flutter_getit.dart';
+import 'package:signals_flutter/signals_flutter.dart';
 
-class PreCheckinPage extends StatelessWidget {
+class PreCheckinPage extends StatefulWidget {
   const PreCheckinPage({super.key});
 
   @override
+  State<PreCheckinPage> createState() => _PreCheckinPageState();
+}
+
+class _PreCheckinPageState extends State<PreCheckinPage> with MessageViewMixin {
+  final controller = Injector.get<PreCheckinController>();
+  @override
+  void initState() {
+    messageListener(controller);
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final PatientInformationFormModel(:password, :patient) =
+        controller.patientInformationForm.watch(context)!;
     return Scaffold(
       appBar: LabClinicasAppBar(),
       body: SingleChildScrollView(
@@ -44,8 +60,8 @@ class PreCheckinPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: Text(
-                    'Laenio Marques',
-                    style: TextStyle(
+                    password,
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -55,43 +71,46 @@ class PreCheckinPage extends StatelessWidget {
                 const SizedBox(height: 48),
                 DataItem(
                   label: 'Nome Paciente',
-                  value: 'Laenio Marques',
-                  padding: EdgeInsets.only(bottom: 24),
+                  value: patient.name,
+                  padding: const EdgeInsets.only(bottom: 24),
                 ),
                 DataItem(
                   label: 'Email',
-                  value: 'Laenio Marques',
-                  padding: EdgeInsets.only(bottom: 24),
+                  value: patient.email,
+                  padding: const EdgeInsets.only(bottom: 24),
                 ),
                 DataItem(
                   label: 'Telefone de contato',
-                  value: 'Laenio Marques',
-                  padding: EdgeInsets.only(bottom: 24),
+                  value: patient.phoneNumber,
+                  padding: const EdgeInsets.only(bottom: 24),
                 ),
                 DataItem(
                   label: 'CPF',
-                  value: 'Laenio Marques',
-                  padding: EdgeInsets.only(bottom: 24),
+                  value: patient.document,
+                  padding: const EdgeInsets.only(bottom: 24),
                 ),
                 DataItem(
                   label: 'CEP',
-                  value: 'Laenio Marques',
-                  padding: EdgeInsets.only(bottom: 24),
+                  value: patient.address.cep,
+                  padding: const EdgeInsets.only(bottom: 24),
                 ),
                 DataItem(
                   label: 'Endereço',
-                  value: 'Laenio Marques',
-                  padding: EdgeInsets.only(bottom: 24),
+                  value:
+                      '${patient.address.streetAddress}, ${patient.address.number} '
+                      '${patient.address.addressComplement}, ${patient.address.district}, '
+                      '${patient.address.city} - ${patient.address.state}',
+                  padding: const EdgeInsets.only(bottom: 24),
                 ),
                 DataItem(
                   label: 'Responsável',
-                  value: 'Laenio Marques',
-                  padding: EdgeInsets.only(bottom: 24),
+                  value: patient.guardian,
+                  padding: const EdgeInsets.only(bottom: 24),
                 ),
                 DataItem(
                   label: 'Documento de Identificação',
-                  value: 'Laenio Marques',
-                  padding: EdgeInsets.only(bottom: 24),
+                  value: patient.guardianIdentificationNumber,
+                  padding: const EdgeInsets.only(bottom: 24),
                 ),
                 const SizedBox(height: 48),
                 Row(
@@ -100,16 +119,22 @@ class PreCheckinPage extends StatelessWidget {
                       child: OutlinedButton(
                           style: OutlinedButton.styleFrom(
                               fixedSize: const Size.fromHeight(48)),
-                          onPressed: () {},
-                          child: Text('CHAMAR OUTRA SENHA')),
+                          onPressed: () {
+                            controller.next();
+                          },
+                          child: const Text('CHAMAR OUTRA SENHA')),
                     ),
                     const SizedBox(width: 16),
                     Expanded(
                         child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                                 fixedSize: const Size.fromHeight(48)),
-                            onPressed: () {},
-                            child: Text('ATENDER')))
+                            onPressed: () {
+                              Navigator.of(context).pushReplacementNamed(
+                                  '/checkin',
+                                  arguments: controller.patientInformationForm);
+                            },
+                            child: const Text('ATENDER')))
                   ],
                 )
               ],

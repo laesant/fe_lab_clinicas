@@ -16,6 +16,7 @@ class DataItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget widget = Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           '$label: ',
@@ -25,12 +26,14 @@ class DataItem extends StatelessWidget {
             color: LabClinicasTheme.blueColor,
           ),
         ),
-        Text(
-          value,
-          style: const TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.w500,
-            color: LabClinicasTheme.orangeColor,
+        Expanded(
+          child: Text(
+            value,
+            style: const TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w500,
+              color: LabClinicasTheme.orangeColor,
+            ),
           ),
         ),
       ],

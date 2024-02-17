@@ -15,10 +15,10 @@
     ],
     "attendantDeskAssignment": [
         {
-            "id": "38b95ba0-43d9-1ebf-ba19-1f2a68fcc1b9",
+            "id": "9d24c650-7ace-1ec1-8111-f945842f9069",
             "user_id": "ce3101c0-1aaa-1e8a-8aa1-cb4b7f020e45",
-            "desk_number": 1,
-            "date_created": "2024-02-16T22:57:57.183956",
+            "desk_number": 7,
+            "date_created": "2024-02-17T16:16:55.070151",
             "status": "Available"
         }
     ],
@@ -70,12 +70,77 @@
             ],
             "password": "Laenio Marques",
             "date_created": "2024-02-13T19:39:18.378071",
-            "status": "Waiting",
+            "status": "Checked In",
+            "tests": []
+        },
+        {
+            "id": "5930c280-3fd1-1eb5-aa05-cfc31093f8402",
+            "patient_id": "b76a78f0-139f-1e91-b8df-f53591feba1b",
+            "health_insurance_card": "/storage/sgplkzhz_jrs_1707853143069.jpg",
+            "medical_order": [
+                "/storage/xaxucrhs_jrs_1707853151001.jpg"
+            ],
+            "password": "Laenio Santos",
+            "date_created": "2024-02-13T19:39:18.378071",
+            "status": "Checked In",
+            "tests": []
+        },
+        {
+            "id": "5930c280-3fd1-1eb5-aa05-cfc31093f8403",
+            "patient_id": "b76a78f0-139f-1e91-b8df-f53591feba1b",
+            "health_insurance_card": "/storage/sgplkzhz_jrs_1707853143069.jpg",
+            "medical_order": [
+                "/storage/xaxucrhs_jrs_1707853151001.jpg"
+            ],
+            "password": "Laenio Albuquerque",
+            "date_created": "2024-02-13T19:39:18.378071",
+            "status": "Checked In",
+            "tests": []
+        },
+        {
+            "id": "5930c280-3fd1-1eb5-aa05-cfc31093f8404",
+            "patient_id": "b76a78f0-139f-1e91-b8df-f53591feba1b",
+            "health_insurance_card": "/storage/sgplkzhz_jrs_1707853143069.jpg",
+            "medical_order": [
+                "/storage/xaxucrhs_jrs_1707853151001.jpg"
+            ],
+            "password": "Sophia Marques",
+            "date_created": "2024-02-13T19:39:18.378071",
+            "status": "Checked In",
             "tests": []
         }
     ],
     "painelCheckin": [
-       
+        {
+            "id": "f9bbdb00-75d4-1ec1-8013-09f155b2bbf3",
+            "password": "Laenio Marques",
+            "time_called": "2024-02-17T16:07:48.085853",
+            "attendant_desk": 1
+        },
+        {
+            "id": "bc48ec40-7acf-1ec1-8111-f945842f9069",
+            "password": "Laenio Marques",
+            "time_called": "2024-02-17T16:16:55.592067",
+            "attendant_desk": 7
+        },
+        {
+            "id": "f7edc390-7b2b-1ec1-8111-f945842f9069",
+            "password": "Laenio Santos",
+            "time_called": "2024-02-17T16:17:35.201874",
+            "attendant_desk": 7
+        },
+        {
+            "id": "5e87e0a0-7dd3-1ec1-8111-f945842f9069",
+            "password": "Laenio Albuquerque",
+            "time_called": "2024-02-17T16:22:26.997308",
+            "attendant_desk": 7
+        },
+        {
+            "id": "e60d5a70-7ddb-1ec1-8111-f945842f9069",
+            "password": "Sophia Marques",
+            "time_called": "2024-02-17T16:22:30.670632",
+            "attendant_desk": 7
+        }
     ],
     "tests": [
         {
