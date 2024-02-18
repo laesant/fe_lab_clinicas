@@ -15,10 +15,10 @@
     ],
     "attendantDeskAssignment": [
         {
-            "id": "4827a4a0-1b18-1ec4-a5c9-1f489fb467c3",
+            "id": "c2df67f0-4872-1ec4-a5c9-1f489fb467c3",
             "user_id": "ce3101c0-1aaa-1e8a-8aa1-cb4b7f020e45",
-            "desk_number": 2,
-            "date_created": "2024-02-18T12:48:53.871618",
+            "desk_number": 3,
+            "date_created": "2024-02-18T14:12:00.581808",
             "status": "Available"
         }
     ],
@@ -94,7 +94,7 @@
             ],
             "password": "Laenio Albuquerque",
             "date_created": "2024-02-13T19:39:18.378071",
-            "status": "Waiting",
+            "status": "Being Attended",
             "tests": []
         },
         {
@@ -106,7 +106,7 @@
             ],
             "password": "Sophia Marques",
             "date_created": "2024-02-13T19:39:18.378071",
-            "status": "Waiting",
+            "status": "Being Attended",
             "tests": []
         }
     ],
@@ -122,6 +122,18 @@
             "password": "Laenio Santos",
             "time_called": "2024-02-18T12:48:54.284101",
             "attendant_desk": 2
+        },
+        {
+            "id": "dedcab60-4873-1ec4-a5c9-1f489fb467c3",
+            "password": "Laenio Albuquerque",
+            "time_called": "2024-02-18T14:12:01.028553",
+            "attendant_desk": 3
+        },
+        {
+            "id": "170dda30-4898-1ec4-a5c9-1f489fb467c3",
+            "password": "Sophia Marques",
+            "time_called": "2024-02-18T14:12:16.610925",
+            "attendant_desk": 3
         }
     ],
     "tests": [
